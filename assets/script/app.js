@@ -8,7 +8,7 @@ const colour = select('.colour');
 const btn = select('.create');
 const shapeBox = select('.grid-container');
 const message = select('.shape-info');
-const STORAGE = 24;
+const STORAGE = 20;
 let array = [];
 let count = 0;
 
@@ -21,31 +21,29 @@ function validInputs() {
   }
 }
 
-function getSelectedText(element) {
+function getSelectedColour(element) {
   if (element.selectedIndex !== -1) {
     return element.options[element.selectedIndex].text;
   }
-}
-
-function createShapeObj() {
-  let colorText = getSelectedText(colour);
-  let newShape = new Shape(shape.value, colorText);
-  array.push(newShape);
 }
 
 function create(elementType) {
   return document.createElement(elementType);
 }
 
-function createShape() {
+function createShapes() {
+  let colourCode = getSelectedColour(colour);
+  let newShape = new Shape(shape.value, colourCode);
+  array.push(newShape);
+
   count++;
-  let newShape = create('div');
+  let newElement = create('div');
   if (shape.value === "circle") {
-    newShape.classList.add('circle');
+    newElement.classList.add('circle');
   }
-  newShape.style.backgroundColor = `#${colour.value}`;
-  newShape.classList.add(`item-${count}`);
-  shapeBox.appendChild(newShape);
+  newElement.style.backgroundColor = `${colour.value}`;
+  newElement.classList.add(`item-${count}`);
+  shapeBox.appendChild(newElement);
 }
 
 function clear() {
@@ -62,38 +60,38 @@ function clickClear() {
 function buttonClick() {
   clickClear();
   if (array.length < STORAGE && validInputs()) {
-    createShapeObj();
-    createShape();
+    createShapes();
   } else if (array.length === STORAGE) {
     message.innerText = `Storage is full!`;
     clear();
   }
 }
 
-listen('click', btn, buttonClick);
-
-function getUnit(ele) {
-  let className = ele[ele.length - 1];
-  let classArr = className.split('-');
-  let unit = classArr[classArr.length - 1];
-  return unit;
+function getUnit(element) {
+  let unitNumber = element[element.length - 1].split('-');
+  let unitCount = unitNumber[unitNumber.length - 1];
+  return unitCount;
 }
 
-function setInfo(unit, info) {
-  message.innerText = `Unit ${unit}: ${info}`;
+function showDetails(unitCount, info) {
+  message.innerText = `Unit ${unitCount}: ${info}`;
 }
 
-listen('click', window, (event) => {
+function returnShapeInfo(event) {
   if (shapeBox.hasChildNodes()) {
     shapeBox.childNodes.forEach(node => {
       if (node.contains(event.target)) {
         let unit = getUnit(node.classList);
         let info = array[unit - 1].getInfo();
-        setInfo(unit, info);
+        showDetails(unit, info);
       }
     });
   }
-});
+}
+
+listen('click', btn, buttonClick);
+listen('click', window, returnShapeInfo);
+
 
 
 

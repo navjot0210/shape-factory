@@ -73,9 +73,10 @@ input:hover {
 /* Shape-Container                              */
 /* -------------------------------------------- */
 .grid-container {
+  padding: 10px;
   display: grid;
-  grid-template-columns: repeat(6, 80px); 
-  grid-template-rows: repeat(4, 92.4px);
+  grid-template-columns: repeat(5, 99px); 
+  grid-template-rows: repeat(4, 114px);
   grid-gap: 10px;
   background-color: #272A31;
   border-radius: 4px;
@@ -89,7 +90,7 @@ input:hover {
 .shape-info {
   font-size: 18px;
   color: var(--text-white);
-  line-height: 1;
+  margin-top: -2%;
 }
 
 .circle {
@@ -97,9 +98,9 @@ input:hover {
 }
 
 .clear {
-  background-color: #CC231E;
+  background-color: rgb(207 25 18);
 }
 
 .clear:hover {
-  background-color: #b3201b;
+  background-color: rgb(141 26 22);
 }
