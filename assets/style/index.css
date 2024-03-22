@@ -69,9 +69,6 @@ input:hover {
   background-color: #e06c00;
 }
 
-.create.green {
-  background-color: aqua;
-}
 /* -------------------------------------------- */
 /* Shape-Container                              */
 /* -------------------------------------------- */
@@ -92,9 +89,17 @@ input:hover {
 .shape-info {
   font-size: 18px;
   color: var(--text-white);
-  line-height: 0;
+  line-height: 1;
 }
 
 .circle {
   border-radius: 50%;
+}
+
+.clear {
+  background-color: #CC231E;
+}
+
+.clear:hover {
+  background-color: #b3201b;
 }

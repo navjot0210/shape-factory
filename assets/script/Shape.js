@@ -1,8 +1,7 @@
 'use strict';
-
 export default 'Shape';
 
-class Shape {
+export class Shape {
   constructor(name, colour) {
     this._name = name;
     this._colour = colour;
