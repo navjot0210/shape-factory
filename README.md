@@ -44,7 +44,7 @@ Worked with [Manpreet_Kaur](https://github.com/dhillxnm) for this project.
 
 ## Demo
 
-Click [here](navjot0210.github.io/shape-factory/) to test the application.
+Click [here](https://navjot0210.github.io/shape-factory/) to test the application.
 
 
 
