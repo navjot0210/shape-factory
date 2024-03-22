@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Navjot Kaur">
+    <meta name="description" content="Shape Factory">
+    <meta name="keywords" content="html, css, web, web development, javascript">
+    <title>Shape Factory</title>
+    <link rel="icon" href="./assets/img/favicon.png?v=2" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/mrspecht/cdn/reset.css">
+    <link rel="stylesheet" href="./assets/style/index.css" media="all">
+    <script src="./assets/script/app.js" type="module"></script>
+  </head>
+  <body>
+      <div class="container">
+        <div class="factory-container">
+          <h1>Shape factory</h1>
+          <form>
+            <select class="shape">
+              <option value="" selected="" disabled="" hidden="">Shape</option>
+              <option value="square">Square</option>
+              <option value="circle">Circle</option>
+            </select>
+            <select class="color">
+              <option value="" selected="" disabled="" hidden="">Color</option>
+              <option value="#09f">Blue</option>
+              <option value="#9f0">Green</option>
+              <option value="#f90">Orange</option>
+              <option value="#f09">Pink</option>
+              <option value="#90f">Purple</option>
+            </select>
+            <input type="button" class="create" value="Create">
+          </form>
+          <div class="grid-container"></div>
+          <p class="shape-info">Select a shape and color to start</p>
+        </div>
+      </div>
+  </body>
+</html>
